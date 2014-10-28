@@ -156,7 +156,7 @@ module CarrierWave
         # boolean
         #
         def store(data,headers={})
-          upyun_connection.put(@path, data, {'Expect' => '', 'Mkdir' => 'true'}.merge(headers))
+          upyun_connection.post(@path, data, {'Expect' => '', 'Mkdir' => 'true'}.merge(headers))
           true
         end
 
